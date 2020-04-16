@@ -84,4 +84,9 @@ startGameBtn.addEventListener('click', () => {
     console.log(winner);
     gameRunning = false;
     console.log('Press the button to play again.')
+    alert(`PLAYER CHOSE ${playerChoice}
+    \n COMPUTER CHOSE ${computerChoice}
+    \n ${winner}
+    \n IF YOU'D LIKE TO PLAY AGAIN, PLEASE CLICK THE 'START GAME' BUTTON.
+    `)
 });
