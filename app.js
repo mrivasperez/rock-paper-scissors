@@ -13,7 +13,7 @@ let gameRunning = false;
 
 // Let user choose whether they want r p or s
 
-const getPlayerChoice = function() {
+const getPlayerChoice = () => {
     const selection = prompt(`${ROCK}, ${PAPER}, or ${SCISSORS}`).toUpperCase();
     if(
         selection !== ROCK &&
@@ -28,7 +28,7 @@ const getPlayerChoice = function() {
 }
 
 // Computer choice
-const generateComputerChoice = function() {
+const generateComputerChoice = () => {
     const randomValue = Math.random();
     if(randomValue < 0.34) {
         return ROCK;
@@ -39,7 +39,7 @@ const generateComputerChoice = function() {
     }
 }
 
-const judge = function (cChoice, pChoice) {
+const judge = (cChoice, pChoice) => {
     if(cChoice === pChoice) {
         return DRAW
     }
@@ -53,7 +53,24 @@ const judge = function (cChoice, pChoice) {
         return PWINNER
     };
 };
-startGameBtn.addEventListener('click', function(){
+
+/* 
+
+Above code can also be written as follows:
+
+const judge = (cChoice, pChoise) => {
+    return cChoice === pChoise
+    ? RESULT_DRAW
+    :   (cChoice === ROCK && pChoice === SCISSORS)||
+        (cChoice === SCISSORS && pChoice === PAPER)||
+        (cChoice === PAPER && pChoice === ROCK)
+    ? PWINNER
+    : CWINNER
+}
+
+*/
+
+startGameBtn.addEventListener('click', () => {
     if(gameRunning) {
         return;
     }
