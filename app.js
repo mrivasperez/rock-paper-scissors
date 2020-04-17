@@ -90,3 +90,14 @@ startGameBtn.addEventListener('click', () => {
     \n IF YOU'D LIKE TO PLAY AGAIN, PLEASE CLICK THE 'START GAME' BUTTON.
     `)
 });
+
+// not part of game
+
+// REST PARAMETER
+const sum = (...numbers) => {
+    let total = 0;
+    for (const num of numbers) {
+        total += num;
+    }
+    return sum;
+}
